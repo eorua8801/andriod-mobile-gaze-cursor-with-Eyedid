@@ -61,6 +61,10 @@ https://youtube.com/shorts/IPJaaLDFI2Q?feature=share
 
 ![시선 커서 실시간 제어](./media/images/demo_cursor_click.gif)
 
+**🔸 화면 테두리 따라 전체 화면의 1% 크기 영역 지정, 추가 조작 기능 맵핑**
+
+![모서리별 기능](./media/images/edge.png)
+
 **🔸 엣지 스크롤**
 - 화면 상단/하단, 좌/우 하단 응시 → 자동 스크롤, 스와이프
 - 연속 스크롤 지원으로 빠른 탐색
