@@ -321,5 +321,5 @@ correctedGaze = gazeData + (fixationData - gazeData) × fusionRatio
 ### 🔗 **참고 링크**
 - **EyeID SDK 문서**: https://docs.eyedid.ai/
 - **안드로이드 접근성 가이드**: https://developer.android.com/accessibility
-- **프로젝트 GitHub**: https://github.com/eorua8801/adaptive-calibration.git
+- **프로젝트 GitHub**: https://github.com/eorua8801/andriod-mobile-gaze-cursor-with-Eyedid.git
 
