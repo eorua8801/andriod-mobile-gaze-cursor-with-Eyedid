@@ -49,7 +49,7 @@
 ```
 **vs 기존 Camera Switches**: 표정 변화 → 스캔 → 선택 → 확인 → 실행
 
-*[데모 GIF 위치: demo_cursor_control.gif - 시선 커서 실시간 제어]*
+![시선 커서 실시간 제어](./media/images/demo_cursor_click.gif)
 
 ### 📊 **2. 성능 비교 (실측 데이터)**
 | 작업 | Camera Switches | 우리 솔루션 | 개선 효과 |
@@ -67,13 +67,18 @@
 - 원하는 위치 1초 응시 → 자동 클릭
 - 진행률 표시로 시각적 피드백
 
+![시선 커서 실시간 제어](./media/images/demo_cursor_click.gif)
+
 **🔸 엣지 스크롤**
-- 화면 상단/하단 응시 → 자동 스크롤
+- 화면 상단/하단, 좌/우 하단 응시 → 자동 스크롤, 스와이프
 - 연속 스크롤 지원으로 빠른 탐색
 
+![시선 커서 스크롤, 스와이프](./media/images/demo_cursor_scroll.gif)
+
 **🔸 스마트 메뉴**
-- 모서리 응시 → 네비게이션/시스템 메뉴
-- 뒤로가기, 앞으로가기 스와이프
+- 좌/우 상단 모서리 응시 → 네비게이션/시스템 메뉴
+
+![시선 커서 메뉴](./media/images/demo_cursor_menu.gif)
 
 **🔸 안경 착용자 보정**
 - gaze-fixation 데이터 융합 보정
