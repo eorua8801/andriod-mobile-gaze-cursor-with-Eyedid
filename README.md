@@ -3,7 +3,6 @@
 
 [![Android](https://img.shields.io/badge/Android-10%2B-green.svg)](https://developer.android.com/about/versions/10)
 [![EyeID SDK](https://img.shields.io/badge/EyeID%20SDK-Latest-blue.svg)](https://docs.eyedid.ai/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **갤럭시/순정 안드로이드에서 시선만으로 스마트폰을 조작하는 커서**  
 > 기존 Camera Switches 대비 **70% 빠른 반응속도**와 **직관적 커서 제어**
