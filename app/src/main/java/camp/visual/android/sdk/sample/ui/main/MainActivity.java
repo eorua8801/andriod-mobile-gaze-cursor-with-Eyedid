@@ -17,7 +17,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import camp.visual.android.sdk.sample.R;
+import com.eorua.gazecursor.R;
 import camp.visual.android.sdk.sample.core.constants.AppConstants;
 import camp.visual.android.sdk.sample.core.managers.CalibrationController;
 import camp.visual.android.sdk.sample.core.managers.PermissionManager;

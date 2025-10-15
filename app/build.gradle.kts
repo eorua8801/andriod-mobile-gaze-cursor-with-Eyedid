@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "camp.visual.android.sdk.sample"
+    namespace = "com.eorua.gazecursor"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "camp.visual.android.sdk.sample"
+        applicationId = "com.eorua.gazecursor"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
@@ -16,14 +16,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
         // 🔒 보안: 라이센스 키와 API URL 설정
-        buildConfigField("String", "EYEDID_LICENSE_KEY", "\"dev_ktygge55mai7a041aglteb4onei9a7m9j7tcqagm\"")
+        buildConfigField("String", "EYEDID_LICENSE_KEY", "\"dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn\"")
         buildConfigField("String", "API_BASE_URL", "\"https://api.eyedid.ai/v1/\"")
     }
 
     buildTypes {
         debug {
             // 🔧 디버그 모드 설정
-            buildConfigField("String", "EYEDID_LICENSE_KEY", "\"dev_ktygge55mai7a041aglteb4onei9a7m9j7tcqagm\"")
+            buildConfigField("String", "EYEDID_LICENSE_KEY", "\"dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn\"")
             buildConfigField("String", "API_BASE_URL", "\"https://dev-api.eyedid.ai/v1/\"")
         }
         

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="camp.visual.android.sdk.sample">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
@@ -17,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EyedidSampleApp">
 
-        <activity android:name=".ui.main.MainActivity"
+        <activity android:name="camp.visual.android.sdk.sample.ui.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,17 +26,17 @@
 
         <!-- 설정 액티비티 추가 -->
         <activity
-            android:name=".ui.settings.SettingsActivity"
+            android:name="camp.visual.android.sdk.sample.ui.settings.SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".ui.main.MainActivity" />
+            android:parentActivityName="camp.visual.android.sdk.sample.ui.main.MainActivity" />
 
         <service
-            android:name=".service.tracking.GazeTrackingService"
+            android:name="camp.visual.android.sdk.sample.service.tracking.GazeTrackingService"
             android:exported="false"
             android:foregroundServiceType="camera" />
 
         <service
-            android:name=".service.accessibility.MyAccessibilityService"
+            android:name="camp.visual.android.sdk.sample.service.accessibility.MyAccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
             android:exported="true">
             <intent-filter>

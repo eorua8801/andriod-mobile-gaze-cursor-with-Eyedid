@@ -15,7 +15,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import camp.visual.android.sdk.sample.R;
+import com.eorua.gazecursor.R;
 import camp.visual.android.sdk.sample.data.settings.SettingsRepository;
 import camp.visual.android.sdk.sample.data.settings.SharedPrefsSettingsRepository;
 import camp.visual.android.sdk.sample.domain.model.OneEuroFilterPreset;

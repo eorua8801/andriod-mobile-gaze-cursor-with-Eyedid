@@ -9,7 +9,7 @@ package camp.visual.android.sdk.sample.core.constants;
 public final class AppConstants {
     
     // 🔒 보안: 라이센스 키 (실제 배포 시 보안 강화 필요)
-    public static final String EYEDID_SDK_LICENSE = "dev_ktygge55mai7a041aglteb4onei9a7m9j7tcqagm";
+    public static final String EYEDID_SDK_LICENSE = "dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn";
     
     // 📱 서비스 관련 상수
     public static final String NOTIFICATION_CHANNEL_ID = "GazeTrackingServiceChannel";

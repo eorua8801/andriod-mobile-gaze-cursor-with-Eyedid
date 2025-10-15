@@ -20,7 +20,7 @@ public final class SecurityManager {
         String licenseKey;
         
         // 유효한 EyeDID SDK 라이센스 키 사용
-        licenseKey = "dev_ktygge55mai7a041aglteb4onei9a7m9j7tcqagm";
+        licenseKey = "dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn";
         Log.d(AppConstants.Logging.TAG_SECURITY, "라이센스 키 사용: " + licenseKey.substring(0, 10) + "...");
         
         // 🔥 라이센스 키 유효성 검사

@@ -22,7 +22,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
-import camp.visual.android.sdk.sample.R;
+import com.eorua.gazecursor.R;
 import camp.visual.android.sdk.sample.data.repository.EyeTrackingRepository;
 import camp.visual.android.sdk.sample.data.repository.EyedidTrackingRepository;
 import camp.visual.android.sdk.sample.data.settings.SettingsRepository;

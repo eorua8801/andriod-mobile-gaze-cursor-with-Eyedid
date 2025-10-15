@@ -10,8 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
-import camp.visual.android.sdk.sample.R;
-
 public class CalibrationViewer extends ViewGroup {
 
     // Default color constants
