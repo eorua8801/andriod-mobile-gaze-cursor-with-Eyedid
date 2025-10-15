@@ -202,8 +202,19 @@ public class EdgeMenuManager {
                 Log.d(TAG, "호버 클릭 실행: " + hoveredButton.label);
                 hoveredButton.execute();
                 
-                // 메뉴 숨기기
-                hideActiveMenu();
+                // 🆕 시스템 메뉴(오른쪽 상단)는 클릭해도 닫히지 않음
+                // 네비게이션 메뉴(왼쪽 상단)만 클릭 시 닫힘
+                if (isSystemMenuActive()) {
+                    Log.d(TAG, "시스템 메뉴는 클릭 후에도 유지됨");
+                    // 호버 상태만 초기화
+                    hoveredButton = null;
+                    hoverStartTime = 0;
+                    activeMenu.setHoveredButton(null);
+                    activeMenu.setHoverProgress(0f);
+                } else {
+                    // 네비게이션 메뉴는 클릭 후 닫힘
+                    hideActiveMenu();
+                }
             }
         } else {
             // 호버되지 않은 상태에서는 진행률 0

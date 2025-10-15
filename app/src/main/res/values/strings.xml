@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">EyedidSampleApp</string>
+  <string name="app_name">시선 추적 커서</string>
   
   <!-- 권한 관련 설명 문구 -->
   <string name="permission_accessibility_title">접근성 서비스 권한 필요</string>

@@ -2,6 +2,7 @@ package camp.visual.android.sdk.sample.ui.views.overlay;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.AudioManager;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -11,101 +12,101 @@ public class SystemMenuOverlay extends EdgeMenuOverlay {
     
     private static final String TAG = "SystemMenuOverlay";
     private Context context;
+    private AudioManager audioManager;
     
     public SystemMenuOverlay(Context context) {
         super(context, Corner.RIGHT_TOP);
         this.context = context;
+        this.audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
     }
     
     @Override
     protected void initMenuButtons() {
-        // 🔧 시스템 설정
-        addMenuButton("⚙", "설정", () -> {
-            Log.d(TAG, "시스템 설정 실행");
-            performSettingsAction();
+        // 🔊 음량 키움
+        addMenuButton("🔊", "음량+", () -> {
+            Log.d(TAG, "음량 키움 실행");
+            performVolumeUp();
         });
         
-        // 🔊 볼륨 조절 
-        addMenuButton("🔊", "볼륨", () -> {
-            Log.d(TAG, "볼륨 조절 실행");
-            performVolumeAction();
+        // 🔉 음량 줄임
+        addMenuButton("🔉", "음량-", () -> {
+            Log.d(TAG, "음량 줄임 실행");
+            performVolumeDown();
         });
         
-        // 📱 알림 패널
-        addMenuButton("📱", "알림", () -> {
-            Log.d(TAG, "알림 패널 토글 실행");
-            performNotificationToggle();
+        // 📳 진동 모드
+        addMenuButton("📳", "진동", () -> {
+            Log.d(TAG, "진동 모드 전환 실행");
+            performToggleVibrationMode();
         });
         
-        // 🔒 화면 잠금
-        addMenuButton("🔒", "잠금", () -> {
-            Log.d(TAG, "화면 잠금 실행");
-            performLockScreenAction();
+        // 🔧 기능 추가 예정
+        addMenuButton("➕", "예정", () -> {
+            Log.d(TAG, "기능 추가 예정 - 아직 구현되지 않음");
+            // 아무 동작도 하지 않음
         });
     }
     
-    private void performSettingsAction() {
+    private void performVolumeUp() {
         try {
-            // 시스템 설정 열기
-            Intent settingsIntent = new Intent(Settings.ACTION_SETTINGS);
-            settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(settingsIntent);
-            Log.d(TAG, "설정 열기 성공");
-        } catch (Exception e) {
-            Log.e(TAG, "설정 열기 실패: " + e.getMessage());
-        }
-    }
-    
-    private void performVolumeAction() {
-        try {
-            if (MyAccessibilityService.getInstance() != null) {
-                // 퀵 설정 패널 열기 (볼륨 조절 포함)
-                MyAccessibilityService.getInstance().performGlobalAction(
-                    android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS
+            if (audioManager != null) {
+                // 현재 스트림 타입에 따라 음량을 증가시킴
+                audioManager.adjustStreamVolume(
+                    AudioManager.STREAM_MUSIC,
+                    AudioManager.ADJUST_RAISE,
+                    AudioManager.FLAG_SHOW_UI
                 );
-                Log.d(TAG, "퀵 설정 (볼륨) 열기 성공");
+                Log.d(TAG, "음량 키움 성공");
             } else {
-                Log.w(TAG, "AccessibilityService가 활성화되지 않음");
+                Log.w(TAG, "AudioManager가 초기화되지 않음");
             }
         } catch (Exception e) {
-            Log.e(TAG, "볼륨 조절 실행 실패: " + e.getMessage());
+            Log.e(TAG, "음량 키움 실패: " + e.getMessage());
         }
     }
     
-    private void performNotificationToggle() {
+    private void performVolumeDown() {
         try {
-            if (MyAccessibilityService.getInstance() != null) {
-                // AccessibilityService를 통한 알림창 열기
-                MyAccessibilityService.getInstance().performGlobalAction(
-                    android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS
+            if (audioManager != null) {
+                // 현재 스트림 타입에 따라 음량을 감소시킴
+                audioManager.adjustStreamVolume(
+                    AudioManager.STREAM_MUSIC,
+                    AudioManager.ADJUST_LOWER,
+                    AudioManager.FLAG_SHOW_UI
                 );
-                Log.d(TAG, "알림창 열기 성공");
+                Log.d(TAG, "음량 줄임 성공");
             } else {
-                Log.w(TAG, "AccessibilityService가 활성화되지 않음");
+                Log.w(TAG, "AudioManager가 초기화되지 않음");
             }
         } catch (Exception e) {
-            Log.e(TAG, "알림창 열기 실패: " + e.getMessage());
+            Log.e(TAG, "음량 줄임 실패: " + e.getMessage());
         }
     }
     
-    private void performLockScreenAction() {
+    private void performToggleVibrationMode() {
         try {
-            if (MyAccessibilityService.getInstance() != null) {
-                // Android 9+ 에서 지원하는 화면 잠금 기능
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-                    MyAccessibilityService.getInstance().performGlobalAction(
-                        android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_LOCK_SCREEN
-                    );
-                    Log.d(TAG, "화면 잠금 성공");
+            if (audioManager != null) {
+                int currentMode = audioManager.getRingerMode();
+                
+                // 현재 모드에 따라 진동 모드로 전환
+                if (currentMode == AudioManager.RINGER_MODE_NORMAL) {
+                    // 일반 모드 → 진동 모드
+                    audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
+                    Log.d(TAG, "진동 모드로 전환됨");
+                } else if (currentMode == AudioManager.RINGER_MODE_VIBRATE) {
+                    // 진동 모드 → 무음 모드
+                    audioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+                    Log.d(TAG, "무음 모드로 전환됨");
                 } else {
-                    // 구형 버전에서는 전원 버튼 시뮬레이션
-                    Log.d(TAG, "구형 안드로이드에서는 화면 잠금 기능이 제한됨");
+                    // 무음 모드 → 일반 모드
+                    audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+                    Log.d(TAG, "일반 모드로 전환됨");
                 }
             } else {
-                Log.w(TAG, "AccessibilityService가 활성화되지 않음");
+                Log.w(TAG, "AudioManager가 초기화되지 않음");
             }
         } catch (Exception e) {
-            Log.e(TAG, "화면 잠금 실행 실패: " + e.getMessage());
+            Log.e(TAG, "진동 모드 전환 실패: " + e.getMessage());
         }
     }
 }
