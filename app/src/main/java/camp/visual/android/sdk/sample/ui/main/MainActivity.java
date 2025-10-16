@@ -626,12 +626,13 @@ public class MainActivity extends AppCompatActivity implements
                 .setMessage("모든 권한 설정이 완료되었습니다!\n\n" +
                            "🎯 이제 시선 추적을 사용해보세요:\n\n" +
                            "• 먼저 '정밀 보정'을 하면 더 정확해져요!\n" +
-                           "• 화면 모서리 응시로 다양한 기능 사용\n" +
-                           "• 3초간 응시하면 자동 클릭")
+                           "• 화면 모서리 응시로 다양한 기능 사용(메인 화면 참고)\n" +
+                           "• 3초간 응시하면 자동 클릭\n" +
+                           "• 메인 화면의 '설정'을 통해 개인 취향에 맞게 조정할 수 있어요!")
                 .setPositiveButton("🎯 정밀 보정 먼저", (dialog, which) -> {
                     handleCalibrationButtonClick();
                 })
-                .setNegativeButton("🎮 바로 체험하기", (dialog, which) -> {
+                .setNegativeButton("🎮 응시 터치 연습", (dialog, which) -> {
                     if (btnPractice != null) {
                         btnPractice.setVisibility(View.VISIBLE);
                         showToast("👆 '연습용' 버튼을 3초간 응시해보세요!", true);

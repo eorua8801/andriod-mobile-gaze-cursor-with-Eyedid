@@ -180,9 +180,9 @@ public class PermissionManager {
                 .setMessage("시선 커서와 캘리브레이션 화면을 표시하려면 화면 위에 그리기 권한이 필요합니다.\n\n" +
                            "이 권한으로 다음이 표시됩니다:\n" +
                            "• 👁️ 시선 위치를 나타내는 커서\n" +
-                           "• 🎯 캘리브레이션(보정) 화면\n" +
-                           "• 📱 모서리 기능 가이드\n\n" +
-                           "설정에서 이 앱의 '다른 앱 위에 표시' 권한을 활성화해주세요.")
+                           "• 🎯 캘리브레이션(보정) 화면\n\n" +
+
+                           "아래 '설정으로 이동' 버튼을 누른 후 '시선 추적 커서' 앱의 권한을 활성화 하고 다시 이 앱으로 돌아와 주세요.")
                 .setPositiveButton("⚙️ 설정으로 이동", (dialog, which) -> {
                     openOverlaySettings(activity);
                 })
@@ -251,7 +251,7 @@ public class PermissionManager {
                            "• 📱 시선으로 스크롤하기\n" +
                            "• 🖱️ 시선으로 스와이프하기\n\n" +
                            "❗ 중요: 이 앱은 시선 추적 목적으로만 접근성 서비스를 사용하며, 개인정보를 수집하지 않습니다.\n\n" +
-                           "설정에서 'EyedidSampleApp' 접근성 서비스를 활성화해주세요.")
+                           "'설정으로 이동' 버튼을 누른 후 '설치된 앱'에서 '시선 추적 커서' 앱의 접근성 서비스를 활성화 한 다음 다시 이 앱으로 돌아와 주세요.")
                 .setPositiveButton("⚙️ 설정으로 이동", (dialog, which) -> {
                     openAccessibilitySettings(activity);
                 })

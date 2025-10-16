@@ -33,7 +33,7 @@ public class CalibrationViewer extends ViewGroup {
 
     private Paint backgroundPaint;
     private TextPaint textPaint;
-    private String message = "Please stare at this point.";
+    private String message = "Please stare at this point.\n화면에 뜨는 점을 봐 주세요!";
     private boolean isEnableText = true;
     private CalibrationPoint calibrationPoint;
 
