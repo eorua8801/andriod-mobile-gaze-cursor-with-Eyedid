@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
+import com.eorua.gazecursor.BuildConfig;
+
 import camp.visual.eyedid.gazetracker.GazeTracker;
 import camp.visual.eyedid.gazetracker.callback.CalibrationCallback;
 import camp.visual.eyedid.gazetracker.callback.InitializationCallback;
@@ -17,7 +19,8 @@ import camp.visual.eyedid.gazetracker.device.CameraPosition;
 
 public class EyedidTrackingRepository implements EyeTrackingRepository {
     private static final String TAG = "EyedidTracking";
-    private static final String LICENSE_KEY = "dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn";
+    // 🔒 BuildConfig에서 라이센스 키 가져오기
+    private static final String LICENSE_KEY = BuildConfig.EYEDID_LICENSE_KEY;
 
     private GazeTracker gazeTracker;
     private int currentFPS = 30; // 기본 FPS

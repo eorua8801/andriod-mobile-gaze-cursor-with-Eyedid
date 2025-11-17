@@ -309,14 +309,15 @@
       android:layout_height="match_parent"
       android:background="#80000000">
     <ProgressBar
+        android:id="@+id/progress_bar_in_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/progress_bar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/progress_bar_in_layout"
         android:text="시선 추적 SDK 초기화 중..."
         android:textColor="@android:color/white"
         android:textSize="16sp"

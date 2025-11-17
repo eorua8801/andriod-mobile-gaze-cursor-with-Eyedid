@@ -1,5 +1,7 @@
 package camp.visual.android.sdk.sample.core.constants;
 
+import com.eorua.gazecursor.BuildConfig;
+
 /**
  * 🔒 애플리케이션 전역 상수 관리
  * - 보안 강화: 민감한 정보 분리
@@ -8,8 +10,8 @@ package camp.visual.android.sdk.sample.core.constants;
  */
 public final class AppConstants {
     
-    // 🔒 보안: 라이센스 키 (실제 배포 시 보안 강화 필요)
-    public static final String EYEDID_SDK_LICENSE = "dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn";
+    // 🔒 보안: 라이센스 키 (BuildConfig에서 가져옴)
+    public static final String EYEDID_SDK_LICENSE = BuildConfig.EYEDID_LICENSE_KEY;
     
     // 📱 서비스 관련 상수
     public static final String NOTIFICATION_CHANNEL_ID = "GazeTrackingServiceChannel";

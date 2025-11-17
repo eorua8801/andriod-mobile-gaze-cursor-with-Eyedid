@@ -16,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EyedidSampleApp">
 
+        <!-- 16KB 페이지 크기 지원 선언 (Android 15+) -->
+        <property
+            android:name="android.app.PROPERTY_COMPAT_ALLOW_16K_PAGE_SIZE"
+            android:value="true" />
+
         <activity android:name="camp.visual.android.sdk.sample.ui.main.MainActivity"
             android:exported="true">
             <intent-filter>

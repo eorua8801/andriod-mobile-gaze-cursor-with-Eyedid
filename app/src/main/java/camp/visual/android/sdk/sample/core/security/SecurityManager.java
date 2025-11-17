@@ -2,6 +2,7 @@ package camp.visual.android.sdk.sample.core.security;
 
 import android.util.Log;
 import camp.visual.android.sdk.sample.core.constants.AppConstants;
+import com.eorua.gazecursor.BuildConfig;
 
 /**
  * 🔒 보안 관리자
@@ -16,12 +17,14 @@ public final class SecurityManager {
      * 실제 배포 시에는 더 강력한 암호화 적용 필요
      */
     public static String getSecureLicense() {
-        // 🆕 유효한 EyeDID SDK 라이센스 키 사용
-        String licenseKey;
+        // 🆕 BuildConfig에서 라이센스 키 읽어오기 (build.gradle.kts에서 설정)
+        // local.properties의 EYEDID_PRODUCTION_KEY 값이 자동으로 주입됨
+        String licenseKey = BuildConfig.EYEDID_LICENSE_KEY;
         
-        // 유효한 EyeDID SDK 라이센스 키 사용
-        licenseKey = "dev_gcgccetiewv85wcwdgzyuyhhy1k020w69mg92dnn";
-        Log.d(AppConstants.Logging.TAG_SECURITY, "라이센스 키 사용: " + licenseKey.substring(0, 10) + "...");
+        // 로그 출력 (보안을 위해 앞 10자만)
+        if (licenseKey != null && licenseKey.length() >= 10) {
+            Log.d(AppConstants.Logging.TAG_SECURITY, "라이센스 키 사용: " + licenseKey.substring(0, 10) + "...");
+        }
         
         // 🔥 라이센스 키 유효성 검사
         if (licenseKey == null || licenseKey.trim().isEmpty()) {
@@ -33,6 +36,13 @@ public final class SecurityManager {
         if (licenseKey.length() < 10) {
             Log.e(AppConstants.Logging.TAG_SECURITY, "라이센스 키가 너무 짧음: " + licenseKey.length());
             return null;
+        }
+        
+        // 프로덕션 키 확인
+        if (licenseKey.startsWith("prod_")) {
+            Log.i(AppConstants.Logging.TAG_SECURITY, "✅ 프로덕션 라이센스 키 사용 중 (길이: " + licenseKey.length() + ")");
+        } else if (licenseKey.startsWith("dev_")) {
+            Log.w(AppConstants.Logging.TAG_SECURITY, "⚠️ 개발용 라이센스 키 사용 중 - 일부 기능이 제한될 수 있습니다");
         }
         
         Log.i(AppConstants.Logging.TAG_SECURITY, "라이센스 키 검증 완료 (길이: " + licenseKey.length() + ")");

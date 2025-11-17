@@ -1,6 +1,6 @@
 [versions]
 agp = "8.9.1"
-eyedidGazetracker = "1.0.0-beta3"
+eyedidGazetracker = "1.0.0-beta4"  # Updated for 16KB page size support (Fixed 16bit align)
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
