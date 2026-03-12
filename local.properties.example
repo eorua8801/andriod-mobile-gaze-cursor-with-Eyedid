@@ -1,0 +1,22 @@
+# =============================================================
+# local.properties.example
+# =============================================================
+# 이 파일을 복사해서 local.properties 파일을 만드세요:
+#   cp local.properties.example local.properties
+#
+# local.properties는 .gitignore에 의해 자동으로 제외됩니다.
+# 절대 커밋하지 마세요.
+# =============================================================
+
+# Eyedid SDK License Key
+# Seeso 개발자 콘솔에서 발급: https://console.seeso.io/
+EYEDID_PRODUCTION_KEY=YOUR_EYEDID_LICENSE_KEY_HERE
+
+# Release Keystore (릴리즈 빌드 시에만 필요)
+# KEYSTORE_FILE=/absolute/path/to/your.keystore
+# KEYSTORE_PASSWORD=your_keystore_password
+# KEY_ALIAS=your_key_alias
+# KEY_PASSWORD=your_key_password
+
+# Android SDK 경로 (자동 설정되는 경우 불필요)
+# sdk.dir=/Users/yourname/Library/Android/sdk
