@@ -53,7 +53,7 @@ public final class SecurityManager {
      * 🔍 로그용 민감 데이터 마스킹
      */
     public static String sanitizeCoordinates(float x, float y) {
-        final boolean DEBUG = true;
+        final boolean DEBUG = BuildConfig.DEBUG;
         if (DEBUG) {
             return String.format("(%.1f, %.1f)", x, y);
         }
@@ -68,7 +68,7 @@ public final class SecurityManager {
             return "****";
         }
         
-        final boolean DEBUG = true;
+        final boolean DEBUG = BuildConfig.DEBUG;
         if (DEBUG) {
             return userId;
         }
@@ -80,7 +80,7 @@ public final class SecurityManager {
      * 🔍 디바이스 정보 마스킹
      */
     public static String sanitizeDeviceInfo(String deviceInfo) {
-        final boolean DEBUG = true;
+        final boolean DEBUG = BuildConfig.DEBUG;
         if (DEBUG) {
             return deviceInfo;
         }
@@ -114,7 +114,7 @@ public final class SecurityManager {
      * 🔒 보안 로그 출력 (배포 버전에서는 비활성화)
      */
     public static void secureLog(String tag, String message) {
-        final boolean DEBUG = true;
+        final boolean DEBUG = BuildConfig.DEBUG;
         if (DEBUG) {
             Log.d(tag, "[SECURE] " + message);
         }
@@ -126,7 +126,7 @@ public final class SecurityManager {
      */
     public static void secureErrorLog(String tag, String message, Throwable throwable) {
         // 민감 정보가 포함될 수 있는 스택 트레이스는 디버그 모드에서만
-        final boolean DEBUG = true;
+        final boolean DEBUG = BuildConfig.DEBUG;
         if (DEBUG) {
             Log.e(tag, "[SECURE_ERROR] " + message, throwable);
         } else {
@@ -170,7 +170,7 @@ public final class SecurityManager {
                 Log.i(AppConstants.Logging.TAG_SECURITY, "라이센스 키 검증 성공");
                 
                 // 2. 디버그 모드 확인
-                final boolean DEBUG = true;
+                final boolean DEBUG = BuildConfig.DEBUG;
                 if (DEBUG) {
                     Log.w(AppConstants.Logging.TAG_SECURITY, "디버그 모드에서 실행 중 - 보안 수준이 낮아질 수 있습니다");
                 }
