@@ -14,7 +14,7 @@
 ### 📊 **현재 안드로이드 접근성 솔루션의 한계**
 
 | 기능 | Camera Switches | Switch Access | **우리 솔루션** |
-|------|----------------|---------------|-----------------|
+|------|----------------|---------------|-----------------｜
 | **제어 방식** | 표정 제스처 6가지 | 스캔 방식 | ✅ **직접 시선 커서** |
 | **반응 속도** | 2-3초 스캔 대기 | 1-2초 스캔 | ✅ **즉시 (50ms)** |
 | **설정 복잡도** | 복잡 | 매우 복잡 | ✅ **5분 완료** |
@@ -104,8 +104,8 @@ app/src/main/java/camp/visual/android/sdk/sample/
 
 ### 🎯 **EyeID SDK 연동 핵심 포인트**
 ```java
-// 1. 라이센스 키 설정
-AppConstants.EYEDID_SDK_LICENSE = "dev_ktygge55mai7a041aglteb4onei9a7m9j7tcqagm"
+// 1. 라이센스 키 설정 (AppConstants.java에서 실제 키를 설정하세요)
+AppConstants.EYEDID_SDK_LICENSE = "YOUR_EYEDID_LICENSE_KEY_HERE"
 
 // 2. 메인 추적 콜백 (GazeTrackingService.java)
 @Override
@@ -321,4 +321,3 @@ correctedGaze = gazeData + (fixationData - gazeData) × fusionRatio
 - **EyeID SDK 문서**: https://docs.eyedid.ai/
 - **안드로이드 접근성 가이드**: https://developer.android.com/accessibility
 - **프로젝트 GitHub**: https://github.com/eorua8801/andriod-mobile-gaze-cursor-with-Eyedid.git
-
