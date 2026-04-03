@@ -86,10 +86,13 @@ Desktop.ini
 app/build/outputs/apk/
 app/build/outputs/bundle/
 
+# Release build artifacts - DO NOT COMMIT binary files
+app/release/
+
 # APK/AAB files
-# *.apk
-# *.ap_
-# *.aab
+*.apk
+*.ap_
+*.aab
 
 # Compiled files
 *.dex
